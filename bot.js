@@ -52,6 +52,16 @@ client.on("guildMemberAdd", (member) => {
 
 
 
+client.on('message', message=> {
+    if (message.author.bot) return;
+    if (message.isMentioned(client.user))
+    {
+    message.reply(" هلا !!");
+    }
+});
+
+
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 client.user.setGame(`1s`,"http://twitch.tv/S-F")
