@@ -5,7 +5,7 @@ const dateformat = require('dateformat');
 const canvas = require('canvas');
 const jimp = require('jimp');
 const moment = require('moment');
-
+const fs = require('fs');
 
 
 var dat = JSON.parse(fs.readFileSync('./invite.json', 'utf8'));
