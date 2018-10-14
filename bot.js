@@ -92,11 +92,11 @@ client.user.setGame(`1s`,"http://twitch.tv/S-F")
 
 
 const yourID = "341562001962696707";
-const setupCMD = "t"
+const setupCMD = "s"
 let initialMessage = `**@everyone  rolereact**
-**من اجل تفعيلك اضغط على الرياكشن** `;
-const roles = ["قلب"];
-const reactions = ["❤️️"];//رياكشن
+**React to the messages below to get role. If you would like to remove the role remove your reaction!** `;
+const roles = ["single"];//رتب
+const reactions = ["👬"];//رياكشن
 
 if (roles.length !== reactions.length) throw "Roles list and reactions list are not the same length!";
 
@@ -137,7 +137,7 @@ client.on('raw', event => {
             var role = msg.content.match(re)[1];
         
             if (user.id != client.user.id){
-                var roleObj = msg.guild.roles.find('name',role);
+                var roleObj = msg.guild.roles.find('name', role);
                 var memberObj = msg.guild.members.get(user.id);
                 
                 if (event.t === "MESSAGE_REACTION_ADD"){
